@@ -20,6 +20,7 @@ if node['ghostblog']['install_dir'] do
   path = node['ghostblog']['install_dir']
   cmd = "sudo npm install --production"
   execute "npm install at #{path}" do
+    cwd path
     command cmd
   end
 end
