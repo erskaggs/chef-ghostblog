@@ -18,6 +18,7 @@ end
 
 nodejs_npm 'package.json' do
     user 'root'
+    group 'root'
     json true
     path node['ghostblog']['install_dir']
     options ['--production']
