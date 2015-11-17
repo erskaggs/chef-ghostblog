@@ -60,18 +60,22 @@ template "#{node['ghostblog']['install_dir']}/config.js" do
     notifies :start, 'service[ghost]', :immediately
 end
 
-template "#{node['ghostblog']['app']['sites_en']['server_name']}.conf" do
+template "#{node['ghostblog']['app']['sites_av']['server_name']}.conf" do
    source 'ghost.conf.erb'
    owner 'root'
    group 'root'
 end
 
- bash 'enable site config' do
-   user 'root'
-   cwd '/etc/nginx/sites-available/'
-   code <<-EOH
-   nxdissite default
-   nxensite #{node['ghostblog']['app']['server_name']}.conf
-   EOH
-   notifies :restart, 'service[nginx]', :immediately
+# bash 'enable site config' do
+#   user 'root'
+#   cwd '/etc/nginx/sites-available/'
+#   code <<-EOH
+#   nxdissite default
+#   nxensite #{node['ghostblog']['app']['server_name']}.conf
+#   EOH
+#   notifies :restart, 'service[nginx]', :immediately
+#end
+
+ link "#{node['ghostblog']['app']['sites_en']['server_name']}.conf" do
+   to "#{node['ghostblog']['app']['sites_av']['server_name']}.conf"
 end
