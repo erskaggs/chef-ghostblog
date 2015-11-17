@@ -16,6 +16,10 @@ execute 'unzip' do
     command "unzip /tmp/ghost.zip -d #{node['ghostblog']['install_dir']}"
 end
 
+apt_package 'npm' do
+  action :install
+end
+
 if node['ghostblog']['install_dir']
   path = node['ghostblog']['install_dir']
   cmd = "sudo npm install --production"
