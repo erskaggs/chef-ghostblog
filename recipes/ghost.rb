@@ -4,7 +4,7 @@ remote_file "/tmp/ghost.zip" do
 end
 
 directory "#{node['ghostblog']['install_dir']}" do
-  mode 0755
+  mode 0775
   owner 'root'
   group 'root'
   recursive true
