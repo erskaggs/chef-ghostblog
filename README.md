@@ -23,33 +23,33 @@ This cookbook depends on the following community cookbooks:
 General settings
 ----------------
 
-* `node['ghost-blog']['install_dir']` - Installation directory for Ghost. Default is `/var/www/html/ghost`
-* `node['ghost-blog']['version']` - Ghost blog version. Default is `latest`. Will also take old versions `0.5.9, 0.5.8, etc`
+* `node['ghostblog']['install_dir']` - Installation directory for Ghost. Default is `/var/www/html/ghost`
+* `node['ghostblog']['version']` - Ghost blog version. Default is `latest`. Will also take old versions `0.5.9, 0.5.8, etc`
 
 Ghost app settings
 ----------------
 
-* `node['ghost-blog']['app']['server_url']` - Ghost app server url. Default is `localhost`
-* `node['ghost-blog']['app']['port']` - Ghost app port. Default is `2368`
-* `node['ghost-blog']['app']['mail_transport_method']` - Ghost app mailing method. Default is `SMTP`.
-* `node['ghost-blog']['app']['mail_service']` - Name of Mail service to use with nodemailer. Default is `nil`. Supports `Gmail`,`SES`, & `mailgun`.
-* `node['ghost-blog']['app']['mail_user']` - Username for select mail service. Default is `nil`
-* `node['ghost-blog']['app']['mail_passwd']` - Password for selected mail user. Default is `nil`
-* `node['ghost-blog']['app']['db_type']` - Type of database to use with Ghost. Default is `sqlite3`. Supports `sqlite3`, and `mysql`.
+* `node['ghostblog']['app']['server_url']` - Ghost app server url. Default is `localhost`
+* `node['ghostblog']['app']['port']` - Ghost app port. Default is `2368`
+* `node['ghostblog']['app']['mail_transport_method']` - Ghost app mailing method. Default is `SMTP`.
+* `node['ghostblog']['app']['mail_service']` - Name of Mail service to use with nodemailer. Default is `nil`. Supports `Gmail`,`SES`, & `mailgun`.
+* `node['ghostblog']['app']['mail_user']` - Username for select mail service. Default is `nil`
+* `node['ghostblog']['app']['mail_passwd']` - Password for selected mail user. Default is `nil`
+* `node['ghostblog']['app']['db_type']` - Type of database to use with Ghost. Default is `sqlite3`. Supports `sqlite3`, and `mysql`.
 
 Ghost MySQL settings
 ----------------
 
 ## Note about MySQL option
 
-Creating a local MySQL server/database is outside the scope of this cookbook. I am assuming if you are using the `mysql` option for `node['ghost-blog']['app']['db_type']` that
+Creating a local MySQL server/database is outside the scope of this cookbook. I am assuming if you are using the `mysql` option for `node['ghostblog']['app']['db_type']` that
 you already have a MySQL elsewhere such as AWS RDS or on another server. You could always wrap this cookbook and create your own MySQL instance. 
 
-* `node['ghost-blog']['mysql']['host']` - MySQL host. Default is `127.0.0.1`
-* `node['ghost-blog']['mysql']['user']` - MySQL user. Default is `ghost_blog`
-* `node['ghost-blog']['mysql']['passwd']` - MySQL password. Default is `ChangePasswordQuick!`
-* `node['ghost-blog']['mysql']['database']` - MySQL database name. Default is `ghost_db`
-* `node['ghost-blog']['mysql']['charset']` - MySQL charset. Default is `utf8`
+* `node['ghostblog']['mysql']['host']` - MySQL host. Default is `127.0.0.1`
+* `node['ghostblog']['mysql']['user']` - MySQL user. Default is `ghost_blog`
+* `node['ghostblog']['mysql']['passwd']` - MySQL password. Default is `ChangePasswordQuick!`
+* `node['ghostblog']['mysql']['database']` - MySQL database name. Default is `ghost_db`
+* `node['ghostblog']['mysql']['charset']` - MySQL charset. Default is `utf8`
 
 Recipes
 =======

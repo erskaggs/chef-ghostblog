@@ -7,5 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 
- include_recipe 'ghost-blog::services'
- include_recipe 'ghost-blog::ghost'
+ include_recipe 'ghostblog::services'
+ include_recipe 'ghostblog::ghost'
