@@ -5,7 +5,8 @@ default['ghostblog']['version'] = 'latest'
 default['ghostblog']['app']['server_url'] = 'localhost'
 default['ghostblog']['app']['port'] = '2368'
 default['ghostblog']['app']['db_type'] = 'sqlite3'
-default['ghostblog']['app']['sites_en'] = '/etc/nginx/sites-available'
+default['ghostblog']['app']['sites_en'] = '/etc/nginx/sites-enabled'
+default['ghostblog']['app']['sites_av'] = '/etc/nginx/sites-available'
 default['ghostblog']['app']['sever_name'] = 'ghostblog.com'
 
 # Ghost MySQL settings
