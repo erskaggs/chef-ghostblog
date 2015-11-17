@@ -60,7 +60,7 @@ template "#{node['ghostblog']['install_dir']}/config.js" do
     notifies :start, 'service[ghost]', :immediately
 end
 
-template "/etc/nginx/sites-available/#{node['ghostblog']['app']['sites_en']}.conf" do
+template "#{node['ghostblog']['app']['sites_en']['server_name']}.conf" do
    source 'ghost.conf.erb'
    owner 'root'
    group 'root'
