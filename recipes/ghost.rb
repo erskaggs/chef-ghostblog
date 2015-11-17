@@ -3,6 +3,14 @@ remote_file "/tmp/ghost.zip" do
     not_if { ::File.exist?("/tmp/ghost.zip") }
 end
 
+directory "#{node['ghostblog']['install_dir']}" do
+  mode 0755
+  owner 'root'
+  group 'root'
+  recursive true
+  action :create
+end
+
 execute 'unzip' do
     user 'root'
     command "unzip /tmp/ghost.zip -d #{node['ghostblog']['install_dir']}"
