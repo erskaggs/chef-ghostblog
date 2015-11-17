@@ -16,7 +16,7 @@ execute 'unzip' do
     command "unzip /tmp/ghost.zip -d #{node['ghostblog']['install_dir']}"
 end
 
-apt_package 'npm' do
+apt_package ['nodejs-legacy','npm'] do
   action :install
 end
 
