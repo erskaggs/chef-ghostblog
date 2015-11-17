@@ -29,12 +29,6 @@ template "#{node['ghostblog']['install_dir']}/config.js" do
     variables(
         :url => node['ghostblog']['app']['server_url'],
         :port => node['ghostblog']['app']['port'],
-        :transport => node['ghostblog']['app']['mail_transport_method'],
-        :service => node['ghostblog']['app']['mail_service'],
-        :user => node['ghostblog']['app']['mail_user'],
-        :passwd => node['ghostblog']['app']['mail_passwd'],
-        :aws_access => node['ghostblog']['ses']['aws_access_key'],
-        :aws_secret => node['ghostblog']['ses']['aws_secret_key'],
         :db_type => node['ghostblog']['app']['db_type'],
         :db_host => node['ghostblog']['mysql']['host'],
         :db_user => node['ghostblog']['mysql']['user'],

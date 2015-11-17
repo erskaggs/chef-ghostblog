@@ -15,17 +15,6 @@ config = {
         }
     }
 },
-    <% elsif @service == 'SES' %>
-    mail: {
-        transport: 'SES',
-        options: {
-            AWSAccessKeyID: "<%= @aws_access %>",
-            AWSSecretKey: "<%= @aws_secret %>"
-    }
-},
-    <% else %>
-    mail: {},
-    <% end %>
 <% if @db_type == 'sqlite3' %>
 database: {
   client: '<%= @db_type %>',
