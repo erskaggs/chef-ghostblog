@@ -16,13 +16,20 @@ execute 'unzip' do
     command "unzip /tmp/ghost.zip -d #{node['ghostblog']['install_dir']}"
 end
 
-nodejs_npm 'package.json' do
-    user 'root'
-    group 'root'
-    json true
-    path node['ghostblog']['install_dir']
-    options ['--production']
+if node['ghostblog']['install_dir'] do
+  path = node['ghostblog']['install_dir']
+  cmd = "sudo npm install --production"
+  execute "npm install at #{path}" do
+    command cmd
+  end
 end
+#nodejs_npm 'package.json' do
+#    user 'root'
+#    group 'root'
+#    json true
+#    path node['ghostblog']['install_dir']
+#    options ['--production']
+#end
 
 template '/etc/init.d/ghost' do
     source 'ghost.init.erb'
