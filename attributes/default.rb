@@ -9,6 +9,8 @@ default['ghostblog']['app']['mail_service'] = nil
 default['ghostblog']['app']['mail_user'] = nil
 default['ghostblog']['app']['mail_passwd'] = nil
 default['ghostblog']['app']['db_type'] = 'sqlite3'
+default['ghostblog']['app']['sites_en'] = '/etc/nginx/sites-available'
+default['ghostblog']['app']['sever_name'] = 'ghostblog.com'
 
 # Ghost MySQL settings
 default['ghostblog']['mysql']['host'] = '127.0.0.1'

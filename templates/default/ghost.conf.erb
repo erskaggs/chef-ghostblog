@@ -1,7 +1,7 @@
 server {
     listen 80;
-    server_name <%= node['ghostblog']['nginx']['server_name'] %>;
-    access_log /var/log/nginx/<%= node['ghostblog']['nginx']['server_name'] %>.log;
+    server_name <%= node['ghostblog']['app']['server_name'] %>;
+    access_log /var/log/nginx/<%= node['ghostblog']['app']['server_name'] %>.log;
 
     location / {
         proxy_set_header X-Real-IP $remote_addr;

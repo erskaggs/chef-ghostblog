@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-SYSCONFDIR='<%= node['ghostblog']['nginx']['dir'] %>'
+SYSCONFDIR='<%= node['ghostblog']['app']['dir'] %>'
 
 if [ -z $1 ]; then
         echo "Which site would you like to enable?"

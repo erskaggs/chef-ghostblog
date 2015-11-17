@@ -39,7 +39,7 @@ template "#{node['ghostblog']['install_dir']}/config.js" do
     notifies :start, 'service[ghost]', :immediately
 end
 
-template "/etc/nginx/sites-available/#{node['ghostblog']['nginx']['server_name']}.conf" do
+template "/etc/nginx/sites-available/#{node['ghostblog']['app']['sites_en']}.conf" do
    source 'ghost.conf.erb'
    owner 'root'
    group 'root'
@@ -50,7 +50,7 @@ end
    cwd '/etc/nginx/sites-available/'
    code <<-EOH
    nxdissite default
-   nxensite #{node['ghostblog']['nginx']['server_name']}.conf
+   nxensite #{node['ghostblog']['app']['server_name']}.conf
    EOH
    notifies :restart, 'service[nginx]', :immediately
 end
