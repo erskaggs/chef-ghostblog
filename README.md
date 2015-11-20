@@ -23,7 +23,7 @@ This cookbook depends on the following community cookbooks:
 General settings
 ----------------
 
-* `node['ghostblog']['install_dir']` - Installation directory for Ghost. Default is `/var/www/html/ghost`
+* `node['ghostblog']['install_dir']` - Installation directory for Ghost. Default is `/var/www/ghost`
 * `node['ghostblog']['version']` - Ghost blog version. Default is `latest`. Will also take old versions `0.5.9, 0.5.8, etc`
 
 Ghost app settings
